@@ -1,0 +1,1843 @@
+{
+	"createdBy": [
+		{
+			"number": 591209,
+			"reviewDecision": "REVIEW_REQUIRED",
+			"state": "OPEN",
+			"statusCheckRollup": [
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536600/job/52083025567",
+					"name": "AI Security Review",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Claude Code Security Review"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536621/job/52083025485",
+					"name": "update-the-pr",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536581/job/52083025427",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536613/job/52083025394",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Slack Android PR Notifications"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536602/job/52083025475",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536605/job/52083025420",
+					"name": "desktop-required-skip",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "desktop-skip"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:07Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084327971",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-06T20:02:07Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:06:42Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903727/job/52084326806",
+					"name": "AI Security Review",
+					"startedAt": "2025-10-06T20:02:09Z",
+					"status": "COMPLETED",
+					"workflowName": "Claude Code Security Review"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:56Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536595/job/52083025337",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903726/job/52084326606",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T20:02:08Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:14Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904062/job/52084328106",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T20:02:10Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:12Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904136/job/52084327875",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T20:02:09Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:05Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536634/job/52083025501",
+					"name": "database-schema-migration-created-comment",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Database Schema Migration"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:50:56Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025445",
+					"name": "e2e-files-changed-comment",
+					"startedAt": "2025-10-06T19:44:55Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:45:01Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536582/job/52083025358",
+					"name": "github-labeler",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "GitHub Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:55Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536604/job/52083025389",
+					"name": "Scan",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Semgrep"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:16Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903709/job/52084326604",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T20:02:10Z",
+					"status": "COMPLETED",
+					"workflowName": "Slack Android PR Notifications"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:45:04Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536601/job/52083025304",
+					"name": "team-labeler",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Team Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:15Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084327992",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-06T20:02:10Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:44:52Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536621/job/52083025873",
+					"name": "notify-failure",
+					"startedAt": "2025-10-06T19:44:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:15Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340012",
+					"name": "check-author",
+					"startedAt": "2025-10-06T20:02:15Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:07Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328047",
+					"name": "check-author",
+					"startedAt": "2025-10-06T20:02:07Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:03Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025448",
+					"name": "fpl-files-changed-comment",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:15Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340023",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-06T20:02:15Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:07Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328160",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-06T20:02:07Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:00Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025402",
+					"name": "email-snapshots-changed-comment",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:15Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340234",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T20:02:15Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:07Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328209",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T20:02:07Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:03Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025412",
+					"name": "email-templates-changed-comment",
+					"startedAt": "2025-10-06T19:44:59Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:15Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340213",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-06T20:02:15Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T20:02:07Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328328",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-06T20:02:08Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:04Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025440",
+					"name": "code-connect-files-changed-comment",
+					"startedAt": "2025-10-06T19:44:55Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:46:06Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025414",
+					"name": "admin-app-files-changed-comment",
+					"startedAt": "2025-10-06T19:44:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:45:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev/dashboard/org/figma/sbom/ec2ea2a0-5ae0-48be-bf9b-bdd974331221",
+					"name": "Socket Security: Project Report",
+					"startedAt": "2025-10-06T19:44:59Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T19:45:16Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev",
+					"name": "Socket Security: Pull Request Alerts",
+					"startedAt": "2025-10-06T19:45:02Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/affected-targets",
+					"startedAt": "2025-10-06T19:46:02Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/affected-targets/builds/546901#0199bb0e-24c1-481d-9e1a-3fa6cccc32af"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/finish",
+					"startedAt": "2025-10-06T20:01:35Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4843102#0199bb0a-8cab-44dc-97c4-0fdcde782315"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/setup",
+					"startedAt": "2025-10-06T19:41:08Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4843102#0199bb09-5f3a-4eae-8922-b5f28e0ea06a"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "commit-integrity-verification",
+					"startedAt": "2025-10-06T19:39:42Z",
+					"state": "SUCCESS",
+					"targetUrl": "http://go/commit-signing/"
+				}
+			],
+			"title": "multiplayer: Remove journal_behind_mode flag"
+		}
+	],
+	"currentBranch": {
+		"number": 591209,
+		"reviewDecision": "REVIEW_REQUIRED",
+		"state": "OPEN",
+		"statusCheckRollup": [
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536600/job/52083025567",
+				"name": "AI Security Review",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Claude Code Security Review"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536621/job/52083025485",
+				"name": "update-the-pr",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Post dependabot actions"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536581/job/52083025427",
+				"name": "run-eval-tests",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Run Make Edits Eval Command"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536613/job/52083025394",
+				"name": "notify-slack",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Slack Android PR Notifications"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536602/job/52083025475",
+				"name": "launch-pipeline",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Workbench Launch Pipeline Command"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536605/job/52083025420",
+				"name": "desktop-required-skip",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "desktop-skip"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:07Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084327971",
+				"name": "check-reviewer",
+				"startedAt": "2025-10-06T20:02:07Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:06:42Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903727/job/52084326806",
+				"name": "AI Security Review",
+				"startedAt": "2025-10-06T20:02:09Z",
+				"status": "COMPLETED",
+				"workflowName": "Claude Code Security Review"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:56Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536595/job/52083025337",
+				"name": "close-large-prs",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Close Large Pull Requests"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:11Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903726/job/52084326606",
+				"name": "close-large-prs",
+				"startedAt": "2025-10-06T20:02:08Z",
+				"status": "COMPLETED",
+				"workflowName": "Close Large Pull Requests"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:14Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904062/job/52084328106",
+				"name": "close-large-prs",
+				"startedAt": "2025-10-06T20:02:10Z",
+				"status": "COMPLETED",
+				"workflowName": "Close Large Pull Requests"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:12Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904136/job/52084327875",
+				"name": "close-large-prs",
+				"startedAt": "2025-10-06T20:02:09Z",
+				"status": "COMPLETED",
+				"workflowName": "Close Large Pull Requests"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:05Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536634/job/52083025501",
+				"name": "database-schema-migration-created-comment",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Database Schema Migration"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:50:56Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025445",
+				"name": "e2e-files-changed-comment",
+				"startedAt": "2025-10-06T19:44:55Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:45:01Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536582/job/52083025358",
+				"name": "github-labeler",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "GitHub Labeler"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:55Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536604/job/52083025389",
+				"name": "Scan",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Semgrep"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:16Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292903709/job/52084326604",
+				"name": "notify-slack",
+				"startedAt": "2025-10-06T20:02:10Z",
+				"status": "COMPLETED",
+				"workflowName": "Slack Android PR Notifications"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:45:04Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536601/job/52083025304",
+				"name": "team-labeler",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Team Labeler"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:15Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084327992",
+				"name": "check-reviewer",
+				"startedAt": "2025-10-06T20:02:10Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:44:52Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536621/job/52083025873",
+				"name": "notify-failure",
+				"startedAt": "2025-10-06T19:44:52Z",
+				"status": "COMPLETED",
+				"workflowName": "Post dependabot actions"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:15Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340012",
+				"name": "check-author",
+				"startedAt": "2025-10-06T20:02:15Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:07Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328047",
+				"name": "check-author",
+				"startedAt": "2025-10-06T20:02:07Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:03Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025448",
+				"name": "fpl-files-changed-comment",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:15Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340023",
+				"name": "auto-assign-individual-reviewer",
+				"startedAt": "2025-10-06T20:02:15Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:07Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328160",
+				"name": "auto-assign-individual-reviewer",
+				"startedAt": "2025-10-06T20:02:07Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:00Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025402",
+				"name": "email-snapshots-changed-comment",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:15Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340234",
+				"name": "notify-slack",
+				"startedAt": "2025-10-06T20:02:15Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:07Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328209",
+				"name": "notify-slack",
+				"startedAt": "2025-10-06T20:02:07Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:03Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025412",
+				"name": "email-templates-changed-comment",
+				"startedAt": "2025-10-06T19:44:59Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:15Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904084/job/52084340213",
+				"name": "notify-assigned-reviewer",
+				"startedAt": "2025-10-06T20:02:15Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T20:02:07Z",
+				"conclusion": "SKIPPED",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292904143/job/52084328328",
+				"name": "notify-assigned-reviewer",
+				"startedAt": "2025-10-06T20:02:08Z",
+				"status": "COMPLETED",
+				"workflowName": "pr-nagbot"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:04Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025440",
+				"name": "code-connect-files-changed-comment",
+				"startedAt": "2025-10-06T19:44:55Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:46:06Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://github.com/figma/figma/actions/runs/18292536609/job/52083025414",
+				"name": "admin-app-files-changed-comment",
+				"startedAt": "2025-10-06T19:44:54Z",
+				"status": "COMPLETED",
+				"workflowName": "Files Changed Comment"
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:45:11Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://socket.dev/dashboard/org/figma/sbom/ec2ea2a0-5ae0-48be-bf9b-bdd974331221",
+				"name": "Socket Security: Project Report",
+				"startedAt": "2025-10-06T19:44:59Z",
+				"status": "COMPLETED",
+				"workflowName": ""
+			},
+			{
+				"__typename": "CheckRun",
+				"completedAt": "2025-10-06T19:45:16Z",
+				"conclusion": "SUCCESS",
+				"detailsUrl": "https://socket.dev",
+				"name": "Socket Security: Pull Request Alerts",
+				"startedAt": "2025-10-06T19:45:02Z",
+				"status": "COMPLETED",
+				"workflowName": ""
+			},
+			{
+				"__typename": "StatusContext",
+				"context": "buildkite/affected-targets",
+				"startedAt": "2025-10-06T19:46:02Z",
+				"state": "SUCCESS",
+				"targetUrl": "https://buildkite.com/figma/affected-targets/builds/546901#0199bb0e-24c1-481d-9e1a-3fa6cccc32af"
+			},
+			{
+				"__typename": "StatusContext",
+				"context": "buildkite/finish",
+				"startedAt": "2025-10-06T20:01:35Z",
+				"state": "SUCCESS",
+				"targetUrl": "https://buildkite.com/figma/figma/builds/4843102#0199bb0a-8cab-44dc-97c4-0fdcde782315"
+			},
+			{
+				"__typename": "StatusContext",
+				"context": "buildkite/setup",
+				"startedAt": "2025-10-06T19:41:08Z",
+				"state": "SUCCESS",
+				"targetUrl": "https://buildkite.com/figma/figma/builds/4843102#0199bb09-5f3a-4eae-8922-b5f28e0ea06a"
+			},
+			{
+				"__typename": "StatusContext",
+				"context": "commit-integrity-verification",
+				"startedAt": "2025-10-06T19:39:42Z",
+				"state": "SUCCESS",
+				"targetUrl": "http://go/commit-signing/"
+			}
+		],
+		"title": "multiplayer: Remove journal_behind_mode flag"
+	},
+	"needsReview": [
+		{
+			"number": 591746,
+			"reviewDecision": "REVIEW_REQUIRED",
+			"state": "OPEN",
+			"statusCheckRollup": [
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894223/job/52111375922",
+					"name": "AI Security Review",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Claude Code Security Review"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894236/job/52111380975",
+					"name": "update-the-pr",
+					"startedAt": "2025-10-07T04:19:00Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894213/job/52111375965",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:39:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302226409/job/52112251194",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T04:39:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:40:03Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302229714/job/52112267568",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T04:40:11Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:40:58Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302244856/job/52112299386",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T04:40:58Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:41:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302257343/job/52112335939",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T04:41:53Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894214/job/52111382748",
+					"name": "notify-slack",
+					"startedAt": "2025-10-07T04:19:02Z",
+					"status": "COMPLETED",
+					"workflowName": "Slack Android PR Notifications"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894225/job/52111375957",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:39:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302226401/job/52112254518",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T04:39:49Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:40:03Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302229715/job/52112267242",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T04:40:10Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:40:58Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302244846/job/52112299385",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T04:40:58Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:41:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302257358/job/52112330431",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T04:41:46Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894221/job/52111375889",
+					"name": "desktop-required-skip",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"status": "COMPLETED",
+					"workflowName": "desktop-skip"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:44Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270791/job/52112366865",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-07T04:42:44Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:46:55Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271718/job/52112368833",
+					"name": "AI Security Review",
+					"startedAt": "2025-10-07T04:42:48Z",
+					"status": "COMPLETED",
+					"workflowName": "Claude Code Security Review"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:19:00Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894242/job/52111375876",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-07T04:18:57Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:49Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270783/job/52112366795",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-07T04:42:46Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:52Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271665/job/52112368681",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-07T04:42:49Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:55Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271736/job/52112368876",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-07T04:42:52Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:05Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894211/job/52111375824",
+					"name": "database-schema-migration-created-comment",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Database Schema Migration"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:03Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375872",
+					"name": "e2e-files-changed-comment",
+					"startedAt": "2025-10-07T04:18:55Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:19:05Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894255/job/52111375905",
+					"name": "github-labeler",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "GitHub Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:21:34Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894230/job/52111375987",
+					"name": "Scan",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Semgrep"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:59Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271773/job/52112368944",
+					"name": "notify-slack",
+					"startedAt": "2025-10-07T04:42:53Z",
+					"status": "COMPLETED",
+					"workflowName": "Slack Android PR Notifications"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:19:04Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894243/job/52111375855",
+					"name": "team-labeler",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Team Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:54Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271837/job/52112369144",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-07T04:42:50Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:18:53Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894236/job/52111375958",
+					"name": "notify-failure",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:44Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270791/job/52112366903",
+					"name": "check-author",
+					"startedAt": "2025-10-07T04:42:44Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:55Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271837/job/52112374416",
+					"name": "check-author",
+					"startedAt": "2025-10-07T04:42:55Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:03Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375874",
+					"name": "fpl-files-changed-comment",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:44Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270791/job/52112366909",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-07T04:42:44Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:55Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271837/job/52112374407",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-07T04:42:55Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:07Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375892",
+					"name": "email-snapshots-changed-comment",
+					"startedAt": "2025-10-07T04:18:57Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:44Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270791/job/52112366913",
+					"name": "notify-slack",
+					"startedAt": "2025-10-07T04:42:44Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:55Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271837/job/52112374400",
+					"name": "notify-slack",
+					"startedAt": "2025-10-07T04:42:55Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:04Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375915",
+					"name": "email-templates-changed-comment",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:44Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302270791/job/52112366959",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-07T04:42:44Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:42:55Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18302271837/job/52112374399",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-07T04:42:55Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:09Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375908",
+					"name": "code-connect-files-changed-comment",
+					"startedAt": "2025-10-07T04:18:57Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:20:05Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18301894253/job/52111375910",
+					"name": "admin-app-files-changed-comment",
+					"startedAt": "2025-10-07T04:18:56Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/multiplayer-rust-tests",
+					"startedAt": "2025-10-07T04:50:29Z",
+					"state": "FAILURE",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4846844#0199bcfe-dd1d-4102-8d89-db1bd038579a"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/finish",
+					"startedAt": "2025-10-07T04:47:28Z",
+					"state": "PENDING",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4846844#0199bcfe-dd31-462a-8f3b-4db000b275a6"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:19:08Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev/dashboard/org/figma/sbom/0e7fd8a6-5ad5-46ce-9e4e-fbaa83b80ecc",
+					"name": "Socket Security: Project Report",
+					"startedAt": "2025-10-07T04:18:59Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T04:19:13Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev",
+					"name": "Socket Security: Pull Request Alerts",
+					"startedAt": "2025-10-07T04:19:05Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/affected-targets",
+					"startedAt": "2025-10-07T04:20:14Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/affected-targets/builds/548055#0199bce4-c13b-4c2e-bbe1-8b6b9a1f39a1"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/setup",
+					"startedAt": "2025-10-07T04:47:36Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4846844#0199bcfd-e353-4eec-bb01-f3b72b42623b"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "commit-integrity-verification",
+					"startedAt": "2025-10-07T04:18:54Z",
+					"state": "SUCCESS",
+					"targetUrl": "http://go/commit-signing/"
+				}
+			],
+			"title": "multiplayer: Fix DocumentRestore flakiness"
+		},
+		{
+			"number": 591547,
+			"reviewDecision": "REVIEW_REQUIRED",
+			"state": "OPEN",
+			"statusCheckRollup": [
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:01Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268932/job/52098088724",
+					"name": "update-the-pr",
+					"startedAt": "2025-10-06T23:26:01Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:01Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268931/job/52098088677",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-06T23:26:01Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:01Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268936/job/52098088706",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-06T23:26:01Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:01Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268970/job/52098088888",
+					"name": "desktop-required-skip",
+					"startedAt": "2025-10-06T23:26:01Z",
+					"status": "COMPLETED",
+					"workflowName": "desktop-skip"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:36Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297918/job/52098168248",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-06T23:27:36Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:32:16Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298631/job/52098170166",
+					"name": "AI Security Review",
+					"startedAt": "2025-10-06T23:27:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Claude Code Security Review"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:07Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268923/job/52098088560",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T23:26:03Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:41Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297912/job/52098168238",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T23:27:38Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298626/job/52098170066",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T23:27:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:47Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298788/job/52098171708",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-06T23:27:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268950/job/52098088632",
+					"name": "database-schema-migration-created-comment",
+					"startedAt": "2025-10-06T23:26:04Z",
+					"status": "COMPLETED",
+					"workflowName": "Database Schema Migration"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:10Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088689",
+					"name": "e2e-files-changed-comment",
+					"startedAt": "2025-10-06T23:26:03Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:14Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268935/job/52098088633",
+					"name": "github-labeler",
+					"startedAt": "2025-10-06T23:26:06Z",
+					"status": "COMPLETED",
+					"workflowName": "GitHub Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:28:19Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268942/job/52098088673",
+					"name": "Scan",
+					"startedAt": "2025-10-06T23:26:03Z",
+					"status": "COMPLETED",
+					"workflowName": "Semgrep"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:46Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298642/job/52098170113",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T23:27:40Z",
+					"status": "COMPLETED",
+					"workflowName": "Slack Android PR Notifications"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:18Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268958/job/52098088735",
+					"name": "team-labeler",
+					"startedAt": "2025-10-06T23:26:06Z",
+					"status": "COMPLETED",
+					"workflowName": "Team Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298796/job/52098170516",
+					"name": "check-reviewer",
+					"startedAt": "2025-10-06T23:27:41Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:01Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268932/job/52098088819",
+					"name": "notify-failure",
+					"startedAt": "2025-10-06T23:26:01Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:36Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297918/job/52098168323",
+					"name": "check-author",
+					"startedAt": "2025-10-06T23:27:36Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298796/job/52098176314",
+					"name": "check-author",
+					"startedAt": "2025-10-06T23:27:45Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:12Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088687",
+					"name": "fpl-files-changed-comment",
+					"startedAt": "2025-10-06T23:26:06Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:36Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297918/job/52098168343",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-06T23:27:36Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298796/job/52098176305",
+					"name": "auto-assign-individual-reviewer",
+					"startedAt": "2025-10-06T23:27:45Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088702",
+					"name": "email-snapshots-changed-comment",
+					"startedAt": "2025-10-06T23:26:04Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:36Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297918/job/52098168513",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T23:27:36Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298796/job/52098176266",
+					"name": "notify-slack",
+					"startedAt": "2025-10-06T23:27:45Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088731",
+					"name": "email-templates-changed-comment",
+					"startedAt": "2025-10-06T23:26:04Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:36Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297297918/job/52098168584",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-06T23:27:36Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:45Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297298796/job/52098176339",
+					"name": "notify-assigned-reviewer",
+					"startedAt": "2025-10-06T23:27:45Z",
+					"status": "COMPLETED",
+					"workflowName": "pr-nagbot"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:11Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088714",
+					"name": "code-connect-files-changed-comment",
+					"startedAt": "2025-10-06T23:26:06Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:27:12Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18297268939/job/52098088752",
+					"name": "admin-app-files-changed-comment",
+					"startedAt": "2025-10-06T23:26:04Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:19Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev/dashboard/org/figma/sbom/09a9642c-a0ea-4661-b32f-7e43796e7676",
+					"name": "Socket Security: Project Report",
+					"startedAt": "2025-10-06T23:26:09Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-06T23:26:22Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev",
+					"name": "Socket Security: Pull Request Alerts",
+					"startedAt": "2025-10-06T23:26:14Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/affected-targets",
+					"startedAt": "2025-10-06T23:29:05Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/affected-targets/builds/547645#0199bbd8-9b97-498b-878a-6f024562f441"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/finish",
+					"startedAt": "2025-10-06T23:41:37Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4845058#0199bbda-7536-4d4c-84b6-56a2df72594b"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/setup",
+					"startedAt": "2025-10-06T23:28:15Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4845058#0199bbd8-9acb-4daa-a91d-9f15c5c6879e"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "commit-integrity-verification",
+					"startedAt": "2025-10-06T23:26:07Z",
+					"state": "SUCCESS",
+					"targetUrl": "http://go/commit-signing/"
+				}
+			],
+			"title": "multiplayer: Fix corrupted import handling without ConnectionOpened"
+		},
+		{
+			"number": 590962,
+			"reviewDecision": "REVIEW_REQUIRED",
+			"state": "OPEN",
+			"statusCheckRollup": [
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440489/job/52107090404",
+					"name": "update-the-pr",
+					"startedAt": "2025-10-07T02:43:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440483/job/52107090416",
+					"name": "run-eval-tests",
+					"startedAt": "2025-10-07T02:43:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Run Make Edits Eval Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440503/job/52107090471",
+					"name": "launch-pipeline",
+					"startedAt": "2025-10-07T02:43:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Workbench Launch Pipeline Command"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440479/job/52107090539",
+					"name": "desktop-required-skip",
+					"startedAt": "2025-10-07T02:43:43Z",
+					"status": "COMPLETED",
+					"workflowName": "desktop-skip"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:47Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440480/job/52107090370",
+					"name": "close-large-prs",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Close Large Pull Requests"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:56Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440477/job/52107090256",
+					"name": "database-schema-migration-created-comment",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Database Schema Migration"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:56Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090513",
+					"name": "e2e-files-changed-comment",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:51Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440482/job/52107090320",
+					"name": "github-labeler",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "GitHub Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:46:41Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440470/job/52107090182",
+					"name": "Scan",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Semgrep"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:58Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440484/job/52107090286",
+					"name": "team-labeler",
+					"startedAt": "2025-10-07T02:43:46Z",
+					"status": "COMPLETED",
+					"workflowName": "Team Labeler"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:43Z",
+					"conclusion": "SKIPPED",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440489/job/52107090434",
+					"name": "notify-failure",
+					"startedAt": "2025-10-07T02:43:43Z",
+					"status": "COMPLETED",
+					"workflowName": "Post dependabot actions"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:57Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090521",
+					"name": "fpl-files-changed-comment",
+					"startedAt": "2025-10-07T02:43:46Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:45:00Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090563",
+					"name": "email-snapshots-changed-comment",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:56Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090588",
+					"name": "email-templates-changed-comment",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:58Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090569",
+					"name": "code-connect-files-changed-comment",
+					"startedAt": "2025-10-07T02:43:46Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:59Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://github.com/figma/figma/actions/runs/18300440519/job/52107090575",
+					"name": "admin-app-files-changed-comment",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"status": "COMPLETED",
+					"workflowName": "Files Changed Comment"
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:48:43Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://cursor.com",
+					"name": "Cursor Bugbot",
+					"startedAt": "2025-10-07T02:44:07Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:43:57Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev/dashboard/org/figma/sbom/49633c98-0947-4cc3-9799-2b7e652f5d4e",
+					"name": "Socket Security: Project Report",
+					"startedAt": "2025-10-07T02:43:51Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "CheckRun",
+					"completedAt": "2025-10-07T02:44:03Z",
+					"conclusion": "SUCCESS",
+					"detailsUrl": "https://socket.dev",
+					"name": "Socket Security: Pull Request Alerts",
+					"startedAt": "2025-10-07T02:43:55Z",
+					"status": "COMPLETED",
+					"workflowName": ""
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/affected-targets",
+					"startedAt": "2025-10-07T02:44:49Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/affected-targets/builds/547982#0199bc8d-97ac-4bd1-abb5-def2af88a1af"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/finish",
+					"startedAt": "2025-10-07T02:55:56Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4846251#0199bc8e-a2bd-41be-b2ce-706f3dc5cc78"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "buildkite/setup",
+					"startedAt": "2025-10-07T02:45:02Z",
+					"state": "SUCCESS",
+					"targetUrl": "https://buildkite.com/figma/figma/builds/4846251#0199bc8d-9720-4b56-8ba6-63859637a85b"
+				},
+				{
+					"__typename": "StatusContext",
+					"context": "commit-integrity-verification",
+					"startedAt": "2025-10-07T02:43:45Z",
+					"state": "SUCCESS",
+					"targetUrl": "http://go/commit-signing/"
+				}
+			],
+			"title": "multiplayer: idempotent `RestApiMutations` message"
+		}
+	]
+}

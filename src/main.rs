@@ -28,7 +28,7 @@ async fn main() -> Result<()> {
         // Generate concise summary
         let summary = match (pr_count, flag_count) {
             (0, f) => format!("{} flag{} waiting", f, if f == 1 { "" } else { "s" }),
-            (p, 0) => format!("{} PR{} need attention", p, if p == 1 { "" } else { "s" }),
+            (p, 0) => format!("{} PR{} {} attention", p, if p == 1 { "" } else { "s" }, if p == 1 { "needs" } else { "need" }),
             (p, f) => format!(
                 "{} PR{} and {} flag{} need attention",
                 p,

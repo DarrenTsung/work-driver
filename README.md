@@ -42,7 +42,42 @@ The binary will be available at `./target/release/work-driver`.
 ./target/release/work-driver
 ```
 
-### Cron Setup
+### Launchd Setup (Recommended for macOS)
+
+The repository includes a launchd plist configured to run at :15 and :45 past every hour.
+
+**Initial setup:**
+```bash
+# Create symlink from LaunchAgents to the repo
+ln -s $(pwd)/com.dtsung.work-driver.plist ~/Library/LaunchAgents/com.dtsung.work-driver.plist
+
+# Load the job
+launchctl load ~/Library/LaunchAgents/com.dtsung.work-driver.plist
+```
+
+**Managing the service:**
+```bash
+# Unload (stop running)
+launchctl bootout gui/$(id -u)/com.dtsung.work-driver
+
+# Load (start running)
+launchctl load ~/Library/LaunchAgents/com.dtsung.work-driver.plist
+
+# Check status
+launchctl list | grep work-driver
+
+# View logs
+tail -f /tmp/work-driver.log
+tail -f /tmp/work-driver-error.log
+```
+
+**After editing the plist:**
+```bash
+launchctl bootout gui/$(id -u)/com.dtsung.work-driver
+launchctl load ~/Library/LaunchAgents/com.dtsung.work-driver.plist
+```
+
+### Alternative: Cron Setup
 
 Add to your crontab to run every 30 minutes:
 

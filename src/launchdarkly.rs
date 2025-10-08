@@ -113,6 +113,7 @@ impl Check for LaunchDarklyChecker {
 
         let mut issues = Vec::new();
         let now = Utc::now().timestamp_millis();
+        let two_hours_ago = now - (2 * 60 * 60 * 1000);
         let eighteen_hours_ago = now - (18 * 60 * 60 * 1000);
 
         // For each flag, fetch detailed info with staging and production environments
@@ -146,13 +147,39 @@ impl Check for LaunchDarklyChecker {
                 .environments
                 .retain(|env_name, _env| env_name == "staging" || env_name == "production");
 
-            // Check each environment (staging and production)
+            // Get rollout percentages for both environments
+            let staging_rollout = flag_detail
+                .environments
+                .get("staging")
+                .and_then(|env| get_rollout_percentage(&flag_detail, env));
+            let production_rollout = flag_detail
+                .environments
+                .get("production")
+                .and_then(|env| get_rollout_percentage(&flag_detail, env));
+
+            // Check if staging is finished rolling out, but production isn't started
+            if let (Some(staging), Some(production)) = (staging_rollout, production_rollout) {
+                if staging >= 50.0 && production == 0.0 {
+                    issues.push(format!(
+                        "Flag '{}' [{}:{}:production] rolled out to {:.0}% in staging, but not started in production",
+                        flag_detail.name, self.project_key, flag.key, staging
+                    ));
+                }
+            }
+
+            // Check each environment (staging and production) for stale partial rollouts
             for (env_name, env) in &flag_detail.environments {
                 let Some(last_modified) = env.last_modified else {
                     continue;
                 };
 
-                let updated_recently = last_modified > eighteen_hours_ago;
+                let (time_threshold, time_str) = if env_name == "staging" {
+                    (two_hours_ago, "2h")
+                } else {
+                    (eighteen_hours_ago, "18h")
+                };
+
+                let updated_recently = last_modified > time_threshold;
                 if updated_recently {
                     continue;
                 }
@@ -163,8 +190,14 @@ impl Check for LaunchDarklyChecker {
                 let threshold = if env_name == "staging" { 50.0 } else { 100.0 };
                 if rollout > 0.0 && rollout < threshold {
                     issues.push(format!(
-                        "Flag '{}' [{}:{}:{}] in {} at partial {:.0}% rollout, not updated in 18h",
-                        flag_detail.name, self.project_key, flag.key, env_name, env_name, rollout
+                        "Flag '{}' [{}:{}:{}] in {} at partial {:.0}% rollout, not updated in {}",
+                        flag_detail.name,
+                        self.project_key,
+                        flag.key,
+                        env_name,
+                        env_name,
+                        rollout,
+                        time_str
                     ));
                 }
             }

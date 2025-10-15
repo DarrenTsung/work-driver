@@ -133,7 +133,8 @@ fn parse_existing_timestamps(html_path: &str) -> HashMap<String, DateTime<Utc>> 
                         // Find the timestamp after the closing >
                         if let Some(ts_start) = line[issue_start..].find('>') {
                             if let Some(ts_end) = line[issue_start + ts_start + 1..].find('<') {
-                                let timestamp_str = &line[issue_start + ts_start + 1..issue_start + ts_start + 1 + ts_end];
+                                let timestamp_str = &line[issue_start + ts_start + 1
+                                    ..issue_start + ts_start + 1 + ts_end];
                                 if let Ok(dt) = DateTime::parse_from_rfc3339(timestamp_str) {
                                     timestamps.insert(issue.to_string(), dt.with_timezone(&Utc));
                                 }

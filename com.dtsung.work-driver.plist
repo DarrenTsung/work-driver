@@ -9,7 +9,7 @@
     <array>
         <string>/bin/zsh</string>
         <string>-c</string>
-        <string>source ~/.zshrc && cd /Users/dtsung/figma/figma && /Users/dtsung/.cargo/bin/work-driver</string>
+        <string>source ~/.zshrc &amp;&amp; cd /Users/dtsung/figma/figma &amp;&amp; /Users/dtsung/.cargo/bin/work-driver</string>
     </array>
 
     <key>StartCalendarInterval</key>

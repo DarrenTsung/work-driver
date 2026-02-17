@@ -15,9 +15,16 @@ impl GitHubChecker {
 
         let mut issues = Vec::new();
 
-        // Check created PRs (only if checks are failing)
+        // Check created PRs
         if let Some(created) = data.get("createdBy").and_then(|v| v.as_array()) {
             for pr in created {
+                let title = pr
+                    .get("title")
+                    .and_then(|v| v.as_str())
+                    .unwrap_or("Unknown PR");
+                let number = pr.get("number").and_then(|v| v.as_u64()).unwrap_or(0);
+                let is_draft = pr.get("isDraft").and_then(|v| v.as_bool()).unwrap_or(false);
+
                 if let Some(checks) = pr.get("statusCheckRollup").and_then(|v| v.as_array()) {
                     let has_failures = checks.iter().any(|check| {
                         check.get("state").and_then(|s| s.as_str()) == Some("FAILURE")
@@ -25,15 +32,22 @@ impl GitHubChecker {
                     });
 
                     if has_failures {
-                        let title = pr
-                            .get("title")
-                            .and_then(|v| v.as_str())
-                            .unwrap_or("Unknown PR");
                         issues.push(format!(
                             "PR #{} '{}' has failing checks",
-                            pr.get("number").and_then(|v| v.as_u64()).unwrap_or(0),
-                            title
+                            number, title
                         ));
+                    } else if is_draft {
+                        let all_complete = checks
+                            .iter()
+                            .all(|check| {
+                                check.get("status").and_then(|s| s.as_str()) == Some("COMPLETED")
+                            });
+                        if all_complete {
+                            issues.push(format!(
+                                "PR #{} '{}' is draft with all checks passing",
+                                number, title
+                            ));
+                        }
                     }
                 }
             }
@@ -68,7 +82,7 @@ impl Check for GitHubChecker {
                 "pr",
                 "status",
                 "--json",
-                "number,title,state,statusCheckRollup,reviewDecision",
+                "number,title,state,isDraft,statusCheckRollup,reviewDecision",
             ])
             .output()
             .context("Failed to execute gh pr status")?;

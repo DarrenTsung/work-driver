@@ -1,6 +1,6 @@
+use crate::state::{load_state, save_state};
 use anyhow::{Context, Result};
-use chrono::{DateTime, Utc};
-use std::collections::HashMap;
+use chrono::Utc;
 use std::fs;
 use std::process::Command;
 
@@ -14,7 +14,7 @@ fn format_issue_as_html(issue: &str) -> String {
                 issue.replace(
                     &format!("PR #{}", number),
                     &format!(
-                        "<a href=\"https://github.com/figma/figma/pull/{}\">PR #{}</a>",
+                        "<a href=\"https://github.com/figma/figma/pull/{}\" target=\"_blank\">PR #{}</a>",
                         number, number
                     )
                 )
@@ -41,7 +41,7 @@ fn format_issue_as_html(issue: &str) -> String {
 
                     // Remove the metadata from the display text
                     let display_text = issue.replace(&format!(" [{}]", metadata), "");
-                    return format!("<li><a href=\"{}\">{}</a></li>", url, display_text);
+                    return format!("<li><a href=\"{}\" target=\"_blank\">{}</a></li>", url, display_text);
                 }
             }
         }
@@ -51,22 +51,35 @@ fn format_issue_as_html(issue: &str) -> String {
     format!("<li>{}</li>", issue)
 }
 
-fn generate_html(issues: &[String], issue_timestamps: &HashMap<String, DateTime<Utc>>) -> String {
-    let issue_items: Vec<String> = issues
-        .iter()
-        .map(|issue| {
-            let timestamp = issue_timestamps
-                .get(issue)
-                .map(|ts| ts.to_rfc3339())
-                .unwrap_or_else(|| Utc::now().to_rfc3339());
-            format!(
-                r#"{} <span style="display:none" class="timestamp" data-issue="{}">{}</span>"#,
-                format_issue_as_html(issue),
-                html_escape::encode_text(issue),
-                timestamp
-            )
-        })
-        .collect();
+fn generate_html(unseen: &[String], seen: &[String]) -> String {
+    let unseen_items: Vec<String> = unseen.iter().map(|i| format_issue_as_html(i)).collect();
+    let seen_items: Vec<String> = seen.iter().map(|i| format_issue_as_html(i)).collect();
+
+    let unseen_section = if unseen_items.is_empty() {
+        r#"<p class="empty">All caught up!</p>"#.to_string()
+    } else {
+        format!(
+            r#"<h2>Needs Attention ({})</h2>
+    <ul class="unseen">
+        {}
+    </ul>"#,
+            unseen_items.len(),
+            unseen_items.join("\n        ")
+        )
+    };
+
+    let seen_section = if seen_items.is_empty() {
+        String::new()
+    } else {
+        format!(
+            r#"<h2 class="seen-header">Recently Reviewed ({})</h2>
+    <ul class="seen">
+        {}
+    </ul>"#,
+            seen_items.len(),
+            seen_items.join("\n        ")
+        )
+    };
 
     format!(
         r#"<!DOCTYPE html>
@@ -87,16 +100,42 @@ fn generate_html(issues: &[String], issue_timestamps: &HashMap<String, DateTime<
             border-bottom: 2px solid #e1e4e8;
             padding-bottom: 10px;
         }}
+        h2 {{
+            color: #444;
+            margin-top: 24px;
+        }}
+        .seen-header {{
+            color: #888;
+        }}
+        .timer {{
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }}
         ul {{
             list-style-type: none;
             padding-left: 0;
         }}
-        li {{
+        .unseen li {{
             padding: 10px;
             margin: 8px 0;
             background: #f6f8fa;
             border-radius: 6px;
             border-left: 4px solid #0969da;
+            transition: opacity 0.3s, background 0.3s;
+        }}
+        .seen li {{
+            padding: 10px;
+            margin: 8px 0;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 4px solid #ccc;
+            opacity: 0.6;
+            transition: opacity 0.3s, background 0.3s;
+        }}
+        .empty {{
+            color: #666;
+            font-style: italic;
         }}
         a {{
             color: #0969da;
@@ -105,87 +144,166 @@ fn generate_html(issues: &[String], issue_timestamps: &HashMap<String, DateTime<
         a:hover {{
             text-decoration: underline;
         }}
+        .seen a {{
+            color: #666;
+        }}
+        li.marking-seen {{
+            opacity: 0.3;
+        }}
     </style>
 </head>
 <body>
     <h1>Work Driver Issues</h1>
-    <ul>
-        {}
-    </ul>
+    <div class="timer" id="timer"></div>
+    {}
+    {}
+    <script>
+    (function() {{
+        // Countdown timer
+        function updateTimer() {{
+            fetch('/state')
+                .then(r => r.json())
+                .then(state => {{
+                    if (state.last_check) {{
+                        const lastCheck = new Date(state.last_check);
+                        const nextCheck = new Date(lastCheck.getTime() + 5 * 60 * 1000);
+                        const now = new Date();
+                        const remaining = Math.max(0, nextCheck - now);
+                        const minutes = Math.floor(remaining / 60000);
+                        const el = document.getElementById('timer');
+                        if (remaining <= 60000) {{
+                            el.textContent = 'Next check in <1m';
+                        }} else {{
+                            el.textContent = 'Next check in ~' + minutes + 'm';
+                        }}
+                    }}
+                }})
+                .catch(() => {{}});
+        }}
+        updateTimer();
+        setInterval(updateTimer, 5000);
+
+        // Intercept link clicks to mark as seen
+        document.addEventListener('click', function(e) {{
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            const li = link.closest('li');
+            if (!li) return;
+
+            e.preventDefault();
+
+            // Extract issue text (strip HTML)
+            const issueText = li.textContent.trim();
+
+            // Visual feedback
+            li.classList.add('marking-seen');
+
+            // POST to server
+            fetch('/seen', {{
+                method: 'POST',
+                headers: {{ 'Content-Type': 'application/json' }},
+                body: JSON.stringify({{ issue: issueText }})
+            }}).catch(() => {{}});
+
+            // Open the link
+            window.open(link.href, '_blank');
+
+            // Move to seen section after a brief delay
+            setTimeout(function() {{
+                const seenList = document.querySelector('ul.seen');
+                if (seenList) {{
+                    li.classList.remove('marking-seen');
+                    seenList.appendChild(li);
+                }}
+            }}, 300);
+        }});
+    }})();
+    </script>
 </body>
 </html>"#,
-        issue_items.join("\n        ")
+        unseen_section, seen_section
     )
 }
 
-fn parse_existing_timestamps(html_path: &str) -> HashMap<String, DateTime<Utc>> {
-    let mut timestamps = HashMap::new();
+pub fn update_html(issues: &[String]) -> Result<()> {
+    let output_path = shellexpand::tilde("~/Desktop/work-driver-issues.html");
 
-    if let Ok(content) = fs::read_to_string(html_path) {
-        // Parse timestamps from HTML
-        for line in content.lines() {
-            if line.contains(r#"class="timestamp""#) {
-                // Extract data-issue and timestamp
-                if let Some(issue_start) = line.find(r#"data-issue=""#) {
-                    if let Some(issue_end) = line[issue_start + 12..].find('"') {
-                        let issue = &line[issue_start + 12..issue_start + 12 + issue_end];
+    let mut state = load_state().unwrap_or_default();
+    let now = Utc::now();
+    let seen_threshold = chrono::Duration::minutes(30);
 
-                        // Find the timestamp after the closing >
-                        if let Some(ts_start) = line[issue_start..].find('>') {
-                            if let Some(ts_end) = line[issue_start + ts_start + 1..].find('<') {
-                                let timestamp_str = &line[issue_start + ts_start + 1
-                                    ..issue_start + ts_start + 1 + ts_end];
-                                if let Ok(dt) = DateTime::parse_from_rfc3339(timestamp_str) {
-                                    timestamps.insert(issue.to_string(), dt.with_timezone(&Utc));
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+    // Classify issues as seen or unseen
+    let mut unseen_issues = Vec::new();
+    let mut seen_issues = Vec::new();
+
+    for issue in issues {
+        let is_seen = state
+            .seen
+            .get(issue)
+            .is_some_and(|ts| now.signed_duration_since(*ts) < seen_threshold);
+
+        if is_seen {
+            seen_issues.push(issue.clone());
+        } else {
+            unseen_issues.push(issue.clone());
         }
     }
 
-    timestamps
+    // Clean up stale entries from state
+    let current_issues: std::collections::HashSet<&String> = issues.iter().collect();
+    state
+        .issue_timestamps
+        .retain(|k, _| current_issues.contains(k));
+    state.seen.retain(|k, _| current_issues.contains(k));
+
+    // Update last_check
+    state.last_check = Some(now);
+
+    // Write HTML
+    let html_content = generate_html(&unseen_issues, &seen_issues);
+    fs::write(output_path.as_ref(), html_content).context("Failed to write issues to file")?;
+
+    // Save state
+    save_state(&state).context("Failed to save state")?;
+
+    Ok(())
 }
 
 pub fn send_notification(summary: &str, detailed_issues: &[String]) -> Result<()> {
-    let output_path = shellexpand::tilde("~/Desktop/work-driver-issues.html");
-
-    // Parse existing timestamps
-    let mut issue_timestamps = parse_existing_timestamps(output_path.as_ref());
-
-    // Check which issues need notification (new or >19 minutes old)
+    let mut state = load_state().unwrap_or_default();
     let now = Utc::now();
-    let threshold = chrono::Duration::minutes(19);
-    let mut needs_notification = false;
-    let mut new_issues = Vec::new();
+    let seen_threshold = chrono::Duration::minutes(30);
+    let notify_threshold = chrono::Duration::minutes(19);
 
+    // Determine if we need to send a notification
+    let mut needs_notification = false;
     for issue in detailed_issues {
-        match issue_timestamps.get(issue) {
+        let is_seen = state
+            .seen
+            .get(issue)
+            .is_some_and(|ts| now.signed_duration_since(*ts) < seen_threshold);
+        if is_seen {
+            continue;
+        }
+
+        match state.issue_timestamps.get(issue) {
             Some(last_notified) => {
-                if now.signed_duration_since(*last_notified) > threshold {
+                if now.signed_duration_since(*last_notified) > notify_threshold {
                     needs_notification = true;
-                    new_issues.push(issue.clone());
-                    // Update timestamp for re-notification
-                    issue_timestamps.insert(issue.clone(), now);
+                    state.issue_timestamps.insert(issue.clone(), now);
                 }
             }
             None => {
-                // New issue
                 needs_notification = true;
-                new_issues.push(issue.clone());
-                issue_timestamps.insert(issue.clone(), now);
+                state.issue_timestamps.insert(issue.clone(), now);
             }
         }
     }
 
-    // Always write the HTML file with updated timestamps
-    let html_content = generate_html(detailed_issues, &issue_timestamps);
-    fs::write(output_path.as_ref(), html_content).context("Failed to write issues to file")?;
+    if needs_notification {
+        save_state(&state).context("Failed to save state")?;
 
-    // Only send notification if there are new issues or issues past threshold
-    if needs_notification && !new_issues.is_empty() {
         Command::new("terminal-notifier")
             .args([
                 "-title",
@@ -194,8 +312,8 @@ pub fn send_notification(summary: &str, detailed_issues: &[String]) -> Result<()
                 summary,
                 "-sound",
                 "Blow",
-                "-execute",
-                &format!("open -a 'Google Chrome' {}", output_path),
+                "-open",
+                "http://localhost:9845/",
             ])
             .output()
             .context("Failed to send notification")?;

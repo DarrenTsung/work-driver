@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.dtsung.work-driver-server</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/dtsung/.cargo/bin/work-driver</string>
+        <string>serve</string>
+    </array>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/work-driver-server.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/work-driver-server-error.log</string>
+</dict>
+</plist>

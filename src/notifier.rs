@@ -5,12 +5,16 @@ use std::fs;
 use std::process::Command;
 
 fn format_issue_as_html(issue: &str) -> String {
+    let escaped_issue = html_escape::encode_text(issue);
+    let data_attr = format!(r#" data-issue="{}""#, escaped_issue);
+
     // Check if it's a PR issue
     if issue.starts_with("PR #") {
         if let Some(end_idx) = issue.find(" '") {
             let number = &issue[4..end_idx];
             return format!(
-                "<li>{}</li>",
+                "<li{}>{}</li>",
+                data_attr,
                 issue.replace(
                     &format!("PR #{}", number),
                     &format!(
@@ -41,45 +45,46 @@ fn format_issue_as_html(issue: &str) -> String {
 
                     // Remove the metadata from the display text
                     let display_text = issue.replace(&format!(" [{}]", metadata), "");
-                    return format!("<li><a href=\"{}\" target=\"_blank\">{}</a></li>", url, display_text);
+                    return format!("<li{}><a href=\"{}\" target=\"_blank\">{}</a></li>", data_attr, url, display_text);
                 }
             }
         }
     }
 
     // Default: no link
-    format!("<li>{}</li>", issue)
+    format!("<li{}>{}</li>", data_attr, issue)
 }
 
 fn generate_html(unseen: &[String], seen: &[String]) -> String {
     let unseen_items: Vec<String> = unseen.iter().map(|i| format_issue_as_html(i)).collect();
     let seen_items: Vec<String> = seen.iter().map(|i| format_issue_as_html(i)).collect();
 
-    let unseen_section = if unseen_items.is_empty() {
-        r#"<p class="empty">All caught up!</p>"#.to_string()
+    let unseen_content = if unseen_items.is_empty() {
+        r#"<p class="empty" id="empty-msg">All caught up!</p>"#.to_string()
     } else {
-        format!(
-            r#"<h2>Needs Attention ({})</h2>
-    <ul class="unseen">
-        {}
-    </ul>"#,
-            unseen_items.len(),
-            unseen_items.join("\n        ")
-        )
+        unseen_items.join("\n        ")
     };
 
-    let seen_section = if seen_items.is_empty() {
-        String::new()
-    } else {
-        format!(
-            r#"<h2 class="seen-header">Recently Reviewed ({})</h2>
-    <ul class="seen">
+    let unseen_section = format!(
+        r#"<h2 id="unseen-header">Needs Attention ({})</h2>
+    <ul class="unseen" id="unseen-list">
         {}
     </ul>"#,
-            seen_items.len(),
-            seen_items.join("\n        ")
-        )
-    };
+        unseen_items.len(),
+        unseen_content
+    );
+
+    let seen_section = format!(
+        r#"<div id="seen-section"{}>
+    <h2 class="seen-header" id="seen-header">Recently Reviewed ({})</h2>
+    <ul class="seen" id="seen-list">
+        {}
+    </ul>
+    </div>"#,
+        if seen_items.is_empty() { r#" style="display:none""# } else { "" },
+        seen_items.len(),
+        seen_items.join("\n        ")
+    );
 
     format!(
         r#"<!DOCTYPE html>
@@ -125,13 +130,21 @@ fn generate_html(unseen: &[String], seen: &[String]) -> String {
             transition: opacity 0.3s, background 0.3s;
         }}
         .seen li {{
-            padding: 10px;
+            padding: 10px 10px 10px 32px;
             margin: 8px 0;
-            background: #fafafa;
+            background: #f9f9f9;
             border-radius: 6px;
-            border-left: 4px solid #ccc;
-            opacity: 0.6;
+            border-left: 4px solid #d1d5da;
+            color: #8b949e;
+            position: relative;
             transition: opacity 0.3s, background 0.3s;
+        }}
+        .seen li::before {{
+            content: '\2713';
+            position: absolute;
+            left: 10px;
+            color: #57ab5a;
+            font-weight: bold;
         }}
         .empty {{
             color: #666;
@@ -145,7 +158,7 @@ fn generate_html(unseen: &[String], seen: &[String]) -> String {
             text-decoration: underline;
         }}
         .seen a {{
-            color: #666;
+            color: #8b949e;
         }}
         li.marking-seen {{
             opacity: 0.3;
@@ -183,6 +196,23 @@ fn generate_html(unseen: &[String], seen: &[String]) -> String {
         updateTimer();
         setInterval(updateTimer, 5000);
 
+        function updateCounts() {{
+            const unseenCount = document.getElementById('unseen-list').querySelectorAll('li').length;
+            const seenCount = document.getElementById('seen-list').querySelectorAll('li').length;
+            document.getElementById('unseen-header').textContent = 'Needs Attention (' + unseenCount + ')';
+            document.getElementById('seen-header').textContent = 'Recently Reviewed (' + seenCount + ')';
+            const emptyMsg = document.getElementById('empty-msg');
+            if (unseenCount === 0 && !emptyMsg) {{
+                const p = document.createElement('p');
+                p.className = 'empty';
+                p.id = 'empty-msg';
+                p.textContent = 'All caught up!';
+                document.getElementById('unseen-list').appendChild(p);
+            }} else if (unseenCount > 0 && emptyMsg) {{
+                emptyMsg.remove();
+            }}
+        }}
+
         // Intercept link clicks to mark as seen
         document.addEventListener('click', function(e) {{
             const link = e.target.closest('a');
@@ -193,8 +223,8 @@ fn generate_html(unseen: &[String], seen: &[String]) -> String {
 
             e.preventDefault();
 
-            // Extract issue text (strip HTML)
-            const issueText = li.textContent.trim();
+            // Use the raw issue key embedded in data-issue
+            const issueText = li.dataset.issue;
 
             // Visual feedback
             li.classList.add('marking-seen');
@@ -211,11 +241,10 @@ fn generate_html(unseen: &[String], seen: &[String]) -> String {
 
             // Move to seen section after a brief delay
             setTimeout(function() {{
-                const seenList = document.querySelector('ul.seen');
-                if (seenList) {{
-                    li.classList.remove('marking-seen');
-                    seenList.appendChild(li);
-                }}
+                li.classList.remove('marking-seen');
+                document.getElementById('seen-list').appendChild(li);
+                document.getElementById('seen-section').style.display = '';
+                updateCounts();
             }}, 300);
         }});
     }})();
@@ -270,14 +299,15 @@ pub fn update_html(issues: &[String]) -> Result<()> {
     Ok(())
 }
 
-pub fn send_notification(summary: &str, detailed_issues: &[String]) -> Result<()> {
+pub fn send_notification(detailed_issues: &[String]) -> Result<()> {
     let mut state = load_state().unwrap_or_default();
     let now = Utc::now();
     let seen_threshold = chrono::Duration::minutes(30);
     let notify_threshold = chrono::Duration::minutes(19);
 
-    // Determine if we need to send a notification
+    // Filter to unseen issues and check throttle
     let mut needs_notification = false;
+    let mut unseen_issues = Vec::new();
     for issue in detailed_issues {
         let is_seen = state
             .seen
@@ -286,6 +316,8 @@ pub fn send_notification(summary: &str, detailed_issues: &[String]) -> Result<()
         if is_seen {
             continue;
         }
+
+        unseen_issues.push(issue.as_str());
 
         match state.issue_timestamps.get(issue) {
             Some(last_notified) => {
@@ -301,23 +333,57 @@ pub fn send_notification(summary: &str, detailed_issues: &[String]) -> Result<()
         }
     }
 
-    if needs_notification {
-        save_state(&state).context("Failed to save state")?;
-
-        Command::new("terminal-notifier")
-            .args([
-                "-title",
-                "Work Driver",
-                "-message",
-                summary,
-                "-sound",
-                "Blow",
-                "-open",
-                "http://localhost:9845/",
-            ])
-            .output()
-            .context("Failed to send notification")?;
+    if !needs_notification || unseen_issues.is_empty() {
+        return Ok(());
     }
+
+    save_state(&state).context("Failed to save state")?;
+
+    // Build summary grouped by type
+    let mut failing = 0;
+    let mut needs_review = 0;
+    let mut draft_ready = 0;
+    let mut flags = 0;
+    for issue in &unseen_issues {
+        if issue.contains("has failing checks") {
+            failing += 1;
+        } else if issue.contains("awaiting your review") {
+            needs_review += 1;
+        } else if issue.contains("is draft with all checks passing") {
+            draft_ready += 1;
+        } else if issue.starts_with("Flag ") {
+            flags += 1;
+        }
+    }
+    let mut parts = Vec::new();
+    if failing > 0 {
+        parts.push(format!("{} failing check{}", failing, if failing == 1 { "" } else { "s" }));
+    }
+    if needs_review > 0 {
+        parts.push(format!("{} review{} waiting", needs_review, if needs_review == 1 { "" } else { "s" }));
+    }
+    if draft_ready > 0 {
+        parts.push(format!("{} draft{} ready", draft_ready, if draft_ready == 1 { "" } else { "s" }));
+    }
+    if flags > 0 {
+        parts.push(format!("{} flag{} stale", flags, if flags == 1 { "" } else { "s" }));
+    }
+    let summary = parts.join(", ");
+
+    Command::new("terminal-notifier")
+        .args([
+            "-title",
+            "Work Driver",
+            "-message",
+            &summary,
+            "-sound",
+            "Blow",
+            "-open",
+            "http://localhost:9845/",
+        ])
+        .output()
+        .context("Failed to send notification")?;
 
     Ok(())
 }
+

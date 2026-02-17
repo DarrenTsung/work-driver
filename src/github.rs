@@ -37,11 +37,11 @@ impl GitHubChecker {
                             number, title
                         ));
                     } else if is_draft {
-                        let all_complete = checks
-                            .iter()
-                            .all(|check| {
-                                check.get("status").and_then(|s| s.as_str()) == Some("COMPLETED")
-                            });
+                        // CheckRun uses status:"COMPLETED", StatusContext uses state:"SUCCESS"
+                        let all_complete = checks.iter().all(|check| {
+                            check.get("status").and_then(|s| s.as_str()) == Some("COMPLETED")
+                                || check.get("state").and_then(|s| s.as_str()) == Some("SUCCESS")
+                        });
                         if all_complete {
                             issues.push(format!(
                                 "PR #{} '{}' is draft with all checks passing",

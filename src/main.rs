@@ -29,25 +29,8 @@ async fn main() -> Result<()> {
     update_html(&all_issues)?;
 
     if !all_issues.is_empty() {
-        // Count PR and flag issues
-        let pr_count = all_issues.iter().filter(|s| s.starts_with("PR #")).count();
-        let flag_count = all_issues.iter().filter(|s| s.starts_with("Flag ")).count();
-
-        // Generate concise summary
-        let summary = match (pr_count, flag_count) {
-            (0, f) => format!("{} flag{} waiting", f, if f == 1 { "" } else { "s" }),
-            (p, 0) => format!("{} PR{} {} attention", p, if p == 1 { "" } else { "s" }, if p == 1 { "needs" } else { "need" }),
-            (p, f) => format!(
-                "{} PR{} and {} flag{} need attention",
-                p,
-                if p == 1 { "" } else { "s" },
-                f,
-                if f == 1 { "" } else { "s" }
-            ),
-        };
-
-        send_notification(&summary, &all_issues)?;
-        println!("Sent notification: {}", summary);
+        send_notification(&all_issues)?;
+        println!("{} issues found", all_issues.len());
     } else {
         println!("No issues found");
     }

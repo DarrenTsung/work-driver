@@ -25,10 +25,26 @@ impl GitHubChecker {
                 let number = pr.get("number").and_then(|v| v.as_u64()).unwrap_or(0);
                 let is_draft = pr.get("isDraft").and_then(|v| v.as_bool()).unwrap_or(false);
 
+                let review_decision = pr.get("reviewDecision").and_then(|v| v.as_str());
+                let has_ready_label = pr
+                    .get("labels")
+                    .and_then(|v| v.as_array())
+                    .is_some_and(|labels| {
+                        labels.iter().any(|l| {
+                            l.get("name").and_then(|n| n.as_str()) == Some("ready-to-merge")
+                        })
+                    });
+
                 if let Some(checks) = pr.get("statusCheckRollup").and_then(|v| v.as_array()) {
                     let has_failures = checks.iter().any(|check| {
                         check.get("state").and_then(|s| s.as_str()) == Some("FAILURE")
                             || check.get("conclusion").and_then(|s| s.as_str()) == Some("FAILURE")
+                    });
+
+                    // CheckRun uses status:"COMPLETED", StatusContext uses state:"SUCCESS"
+                    let all_complete = !checks.is_empty() && checks.iter().all(|check| {
+                        check.get("status").and_then(|s| s.as_str()) == Some("COMPLETED")
+                            || check.get("state").and_then(|s| s.as_str()) == Some("SUCCESS")
                     });
 
                     if has_failures {
@@ -36,18 +52,20 @@ impl GitHubChecker {
                             "PR #{} '{}' has failing checks",
                             number, title
                         ));
-                    } else if is_draft {
-                        // CheckRun uses status:"COMPLETED", StatusContext uses state:"SUCCESS"
-                        let all_complete = checks.iter().all(|check| {
-                            check.get("status").and_then(|s| s.as_str()) == Some("COMPLETED")
-                                || check.get("state").and_then(|s| s.as_str()) == Some("SUCCESS")
-                        });
-                        if all_complete {
-                            issues.push(format!(
-                                "PR #{} '{}' is draft with all checks passing",
-                                number, title
-                            ));
-                        }
+                    } else if is_draft && all_complete {
+                        issues.push(format!(
+                            "PR #{} '{}' is draft with all checks passing",
+                            number, title
+                        ));
+                    } else if !is_draft
+                        && all_complete
+                        && review_decision == Some("APPROVED")
+                        && !has_ready_label
+                    {
+                        issues.push(format!(
+                            "PR #{} '{}' approved but missing ready-to-merge label",
+                            number, title
+                        ));
                     }
                 }
             }
@@ -82,7 +100,7 @@ impl Check for GitHubChecker {
                 "pr",
                 "status",
                 "--json",
-                "number,title,state,isDraft,statusCheckRollup,reviewDecision",
+                "number,title,state,isDraft,labels,statusCheckRollup,reviewDecision",
             ])
             .output()
             .context("Failed to execute gh pr status")?;

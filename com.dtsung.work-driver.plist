@@ -9,7 +9,7 @@
     <array>
         <string>/bin/zsh</string>
         <string>-c</string>
-        <string>source ~/.zshrc &amp;&amp; cd /Users/dtsung/figma/figma &amp;&amp; /Users/dtsung/.cargo/bin/work-driver</string>
+        <string>export PATH="/opt/homebrew/bin:$PATH" &amp;&amp; source ~/.zshrc &amp;&amp; cd /Users/dtsung/figma/figma &amp;&amp; /Users/dtsung/.cargo/bin/work-driver</string>
     </array>
 
     <key>StartCalendarInterval</key>
@@ -504,6 +504,6 @@
     <string>/tmp/work-driver-error.log</string>
 
     <key>RunAtLoad</key>
-    <false/>
+    <true/>
 </dict>
 </plist>

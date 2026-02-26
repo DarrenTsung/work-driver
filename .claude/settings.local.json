@@ -3,7 +3,10 @@
     "allow": [
       "Bash(cargo test:*)",
       "Bash(cat:*)",
-      "Bash(cargo:*)"
+      "Bash(cargo:*)",
+      "Bash(launchctl load:*)",
+      "Bash(launchctl list:*)",
+      "Bash(launchctl unload:*)"
     ],
     "deny": [],
     "ask": []

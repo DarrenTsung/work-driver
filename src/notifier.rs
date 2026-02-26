@@ -343,6 +343,7 @@ pub fn send_notification(detailed_issues: &[String]) -> Result<()> {
     let mut failing = 0;
     let mut needs_review = 0;
     let mut draft_ready = 0;
+    let mut needs_label = 0;
     let mut flags = 0;
     for issue in &unseen_issues {
         if issue.contains("has failing checks") {
@@ -351,6 +352,8 @@ pub fn send_notification(detailed_issues: &[String]) -> Result<()> {
             needs_review += 1;
         } else if issue.contains("is draft with all checks passing") {
             draft_ready += 1;
+        } else if issue.contains("missing ready-to-merge label") {
+            needs_label += 1;
         } else if issue.starts_with("Flag ") {
             flags += 1;
         }
@@ -364,6 +367,9 @@ pub fn send_notification(detailed_issues: &[String]) -> Result<()> {
     }
     if draft_ready > 0 {
         parts.push(format!("{} draft{} ready", draft_ready, if draft_ready == 1 { "" } else { "s" }));
+    }
+    if needs_label > 0 {
+        parts.push(format!("{} PR{} ready to merge", needs_label, if needs_label == 1 { "" } else { "s" }));
     }
     if flags > 0 {
         parts.push(format!("{} flag{} stale", flags, if flags == 1 { "" } else { "s" }));

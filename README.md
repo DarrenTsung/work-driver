@@ -2,11 +2,15 @@
 
 A periodic checker that monitors your GitHub PRs and LaunchDarkly feature flags, sending desktop notifications when action is needed.
 
+![Work Driver Issues screenshot](screenshot.png)
+
 ## Features
 
-- **GitHub PR Monitoring**: Tracks PRs you've created (if checks fail) and PRs requesting your review
-- **LaunchDarkly Flag Monitoring**: Monitors boolean flags with partial rollouts in staging (<50%) or production (<100%) that haven't been updated in 18 hours
-- **Smart Notifications**: Generates concise notification summaries with detailed HTML reports containing clickable links
+- **GitHub PR Monitoring**: Tracks PRs you've authored (failing checks, draft PRs with all checks passing, approved PRs missing the ready-to-merge label) and PRs awaiting your review
+- **LaunchDarkly Flag Monitoring**: Monitors your boolean flags for stale partial rollouts (staging >2h, production >18h) and flags rolled out in staging but not started in production
+- **Live Dashboard**: Local HTTP server serves an HTML dashboard with a countdown to the next check, clickable links to PRs and flags, and "Needs Attention" / "Recently Reviewed" sections
+- **Seen State Tracking**: Clicking an issue in the dashboard marks it as seen — seen issues move to "Recently Reviewed" and are suppressed from notifications for 30 minutes
+- **Notification Throttling**: Desktop notifications via `terminal-notifier` are throttled per-issue so the same problem doesn't re-alert within 19 minutes
 
 ## Setup
 
